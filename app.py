@@ -328,11 +328,3 @@ def delete_expansion(topic_id):
         return jsonify({'message': 'Expansão excluída com sucesso'})
     except Exception as e:
         return jsonify({'error': f'Erro ao excluir expansão: {str(e)}'}), 500
-
-# Configurar o diretório estático
-app.static_folder = 'static'
-app.static_url_path = '/static'
-
-@app.route('/')
-def serve_index():
-    return app.send_static_file('index.html')
